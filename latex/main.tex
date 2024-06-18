@@ -1,0 +1,21 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{import}
+\usepackage{MathsMode}
+\begin{document}
+\import{./}{title.tex}
+\newpage 
+\tableofcontents
+\pagenumbering{gobble}
+\newpage 
+%%%sections with gobbled indexing 
+
+%%%sections with arabic indexing
+\pagenumbering{arabic}
+
+%%%references
+\bibliographystyle{ieeetr}
+\newpage 
+\bibliography{Ref/refs}
+
+\end{document}

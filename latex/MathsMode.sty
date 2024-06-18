@@ -1,0 +1,155 @@
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\cfoot{\thepage}
+\pagestyle{fancy}
+\usepackage{booktabs}
+\usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14.9998pt}
+\addtolength{\topmargin}{-2.4999pt}
+%% mathematical 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+%% citations
+\usepackage{hyperref}
+\hypersetup{pdfborderstyle={/S/U/W 1}}
+
+\usepackage{url}
+\usepackage{cite}
+
+
+%% graphical  
+\usepackage{float}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{cleveref}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usetikzlibrary{shapes.geometric, arrows.meta, arrows, calc}
+\tikzstyle{box} = [draw, rectangle, fill=white!20,text width=6em,text centered, minimum height=1em]
+\tikzstyle{arrow} = [draw,-latex']
+\usepackage{nomencl}
+\makenomenclature
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{P}{Physical}{%
+  \ifstrequal{#1}{N}{Numerical}{%
+  \ifstrequal{#1}{O}{Mathematical}{}}}%
+]}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+%% algorithm 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+%% page settings
+\parskip6pt
+\parindent0pt
+
+%%Mathematical formatting using Tikz
+\usepackage{incgraph}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems}
+% arara: pdflatex
+
+\newcommand{\ara}[1]{\text{Area} (#1)}
+%\newtcbtheorem[auto counter, number within=section]{exa}{Example}
+%{colback=gray!5,
+%colframe=black!50,
+%fonttitle=\bfseries}{t}
+\usepackage{longtable}
+%%TODO 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\usepackage[english]{babel}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\numberwithin{equation}{section}
+%\newtheorem{proposition}{Proposition}
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+%\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\setlength{\marginparwidth}{2cm}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=orange,backgroundcolor=orange!25,bordercolor=orange,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+%%mathematics commands 
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\mb}[1]{\boldsymbol{#1}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\N}[0]{\mathbb{N}}
+
+\newcommand{\ome}[0]{\Omega}
+\newcommand{\mbu}[0]{\mb{u}}
+\newcommand{\mbx}[0]{\mb{x}}
+\newcommand{\mby}[0]{\mb{y}}
+\newcommand{\pat}[1]{\partial_{#1}}
+\newcommand{\gra}[0]{\nabla}
+\newcommand{\lap}[0]{\Delta}
+\newcommand{\ve}[0]{\varepsilon}
+\newcommand{\pato}[0]{\Gamma}
+\newcommand{\PETSc}[0]{\texttt{PETSc}}
+\newcommand{\DF}[0]{\texttt{DUNE-FEM}}
+\newcommand{\Hypre}[0]{\texttt{Hypre}}
+\newcommand{\vp}[0]{v}
+\newcommand{\mcK}[0]{\mathcal{K}}
+\newcommand{\mbJ}[0]{\mb{J}}
+\newcommand{\mbF}[0]{\mb{F}}
+\newcommand{\mcN}[0]{\mathcal{N}}
+\newcommand{\mcE}[0]{\mathcal{E}}
+\newcommand{\mcC}[0]{\mathcal{C}}
+\newcommand{\P}[0]{\mathbb{P}}
+\newcommand{\intva}[2]{\int_{#1} #2 d\mbx}
+\newcommand{\intome}[1]{\int_{\Omega} #1 d\mbx}
+\newcommand{\nod}[0]{\hat{N}}
+\newcommand{\mba}[0]{\mathbf{A}}
+\newcommand{\hsd}[1]{H_0^1(#1)}
+\newcommand{\tra}[0]{\mathcal{T}}
+\newcommand{\Homo}[0]{\Psi(c)}
+\newcommand{\homo}[0]{\psi(c)}
+\newcommand{\den}[1]{\langle #1 \rangle}
+\newcommand{\tf}[0]{t_{\text{end}}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\norm}[1]{||#1||}
+\newcommand{\nt}[1]{\norm{#1}_2}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\mc}[1]{\mathcal{1}}
+\newcommand{\lt}[0]{L^2}
